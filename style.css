@@ -1,0 +1,214 @@
+:root {
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --text: #222;
+    --primary: #2e7d32;
+    --secondary: #4caf50;
+  }
+  
+  .dark {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #ffffff;
+    --primary: #66bb6a;
+    --secondary: #81c784;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+  }
+  
+  /* HEADER */
+  .header {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  /* BOTÃO DARK */
+  .dark-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  /* MENU */
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+  }
+  
+  .menu button {
+    padding: 10px 18px;
+    border-radius: 25px;
+    border: none;
+    background: var(--card);
+    color: var(--text);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .menu button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .menu .active {
+    background: var(--primary);
+    color: white;
+  }
+  
+  /* MAIN */
+  main {
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  /* PÁGINAS */
+  .page {
+    display: none;
+    background: var(--card);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: fade 0.4s ease;
+  }
+  
+  .page.active {
+    display: block;
+  }
+  
+  @keyframes fade {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  
+  /* CARDS */
+  .grid {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .card-small {
+    flex: 1;
+    padding: 20px;
+    background: rgba(76,175,80,0.1);
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  /* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  /* header */
+  .header h1 {
+    font-size: 20px;
+  }
+
+  /* menu vira scroll horizontal */
+  .menu {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .menu button {
+    flex: 0 0 auto;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* cards em coluna */
+  .grid {
+    flex-direction: column;
+  }
+
+  .card-small {
+    width: 100%;
+  }
+
+  /* conteúdo */
+  main {
+    padding: 10px;
+  }
+
+  .page {
+    padding: 15px;
+  }
+
+  /* tabela responsiva */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* ranking */
+  .ranking li {
+    font-size: 14px;
+  }
+
+}
+
+  
+  .card-small:hover {
+    background: rgba(76,175,80,0.2);
+    transform: scale(1.05);
+  }
+  
+  /* AVISOS */
+  .alert {
+    background: rgba(76,175,80,0.1);
+    padding: 15px;
+    border-left: 5px solid var(--primary);
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  /* TABELA */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  th {
+    background: var(--primary);
+    color: white;
+  }
+  
+  td, th {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* RANKING */
+  .ranking li {
+    padding: 10px;
+    background: rgba(76,175,80,0.1);
+    margin: 5px 0;
+    border-radius: 8px;
+  }
+  
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: var(--primary);
+    color: white;
+  }
+  

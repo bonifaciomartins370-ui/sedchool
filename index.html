@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Sedchool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>Sedchool</h1>
+  <button onclick="toggleDark()" class="dark-btn">🌙</button>
+</header>
+
+<nav class="menu">
+  <button onclick="show('inicio')" class="active">Início</button>
+  <button onclick="show('avisos')">Avisos</button>
+  <button onclick="show('horarios')">Horários</button>
+  <button onclick="show('ranking')">Ranking</button>
+  <button onclick="show('sobre')">Sobre</button>
+</nav>
+
+<main>
+
+<section id="inicio" class="page active">
+  <h2>Bem-vindo à Sedchool</h2>
+  <p>Plataforma escolar moderna.</p>
+
+  <div class="grid">
+    <div class="card-small">📢 Avisos</div>
+    <div class="card-small">⏰ Horários</div>
+    <div class="card-small">🏆 Ranking</div>
+  </div>
+</section>
+
+<section id="avisos" class="page">
+  <h2>📢 Avisos</h2>
+
+  <div class="alert">
+    <h3>Início do 2º Trimestre</h3>
+    <p>As aulas começam na próxima segunda-feira.</p>
+  </div>
+
+  <div class="alert">
+    <h3>Reunião de Pais</h3>
+    <p>Dia 5 de Abril às 9h.</p>
+  </div>
+</section>
+
+<section id="horarios" class="page">
+  <h2>⏰ Horários</h2>
+
+  <table>
+    <tr>
+      <th>Hora</th>
+      <th>Segunda</th>
+      <th>Terça</th>
+      <th>Quarta</th>
+      <th>Quinta</th>
+    </tr>
+
+    <tr>
+      <td>07:30</td>
+      <td>Matemática</td>
+      <td>Português</td>
+      <td>Física</td>
+      <td>Química</td>
+    </tr>
+
+    <tr>
+      <td>09:00</td>
+      <td>Português</td>
+      <td>Matemática</td>
+      <td>Informática</td>
+      <td>Física</td>
+    </tr>
+  </table>
+</section>
+
+<section id="ranking" class="page">
+  <h2>🏆 Ranking</h2>
+  <ul class="ranking">
+    <li>1ªJoão - 18 valores</li>
+    <li>2ª Maria - 17 valores</li>
+    <li>3ª Carlos - 16 valores</li>
+  </ul>
+</section>
+
+<section id="sobre" class="page">
+  <h2>Sobre</h2>
+  <p>Criado por Bonifácio Almeida Martins</p>
+  <p>Do curso T.I 10ªclasse</p>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Sedchool
+</footer>
+
+<script src="script.js"></script>
+</header>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</body>
+</html>
