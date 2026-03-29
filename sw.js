@@ -33,6 +33,11 @@ self.addEventListener("activate", (event) => {
 // Interceptar requisições (offline support)
 self.addEventListener("fetch", (event) => {
   event.respondWith(
+    <script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
+</script>
     caches.match(event.request).then((response) => {
       return response || fetch(event.request);
     })
