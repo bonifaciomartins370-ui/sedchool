@@ -1,0 +1,11 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "sedchool",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Ngola",
+  "start_url": "/",
+  "theme_color": "#ffffff"
+}
