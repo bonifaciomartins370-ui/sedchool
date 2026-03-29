@@ -1,3 +1,8 @@
+<script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
+</script>
 const CACHE_NAME = "sedchool-cache-v1";
 const urlsToCache = [
   "/sedchool/",
@@ -37,9 +42,3 @@ self.addEventListener("fetch", (event) => {
   if (typeof navigator.serviceWorker !== 'undefined') {
     navigator.serviceWorker.register('sw.js')
   }
-</script>
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
-});
