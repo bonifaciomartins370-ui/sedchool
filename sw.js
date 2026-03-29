@@ -3,42 +3,19 @@
     navigator.serviceWorker.register('sw.js')
   }
 </script>
-const CACHE_NAME = "sedchool-cache-v1";
-const urlsToCache = [
-  "/sedchool/",
-  "/sedchool/index.html",
-  "/sedchool/style.css",
-  "/sedchool/script.js"
-];
 
-// Instalar o service worker
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
-    })
-  );
-});
+const CACHE_NAME = 'cool-cache';
 
-// Ativar (limpar cache antigo)
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            return caches.delete(cache);
-          }
-        })
-      );
-    })
-  );
-});
+// Add whichever assets you want to pre-cache here:
+const PRECACHE_ASSETS = [
+    '/assets/',
+    '/src/'
+]
 
-// Interceptar requisições (offline support)
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    <script>
-  if (typeof navigator.serviceWorker !== 'undefined') {
-    navigator.serviceWorker.register('sw.js')
-  }
+// Listener for the install event - pre-caches our assets list on service worker install.
+self.addEventListener('install', event => {
+    event.waitUntil((async () => {
+        const cache = await caches.open(CACHE_NAME);
+        cache.addAll(PRECACHE_ASSETS);
+    })());
+}
